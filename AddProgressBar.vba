@@ -1,9 +1,8 @@
   Sub AddProgressBar()
+  Call RemoveProgressBar
     On Error Resume Next
         With ActivePresentation
               For X = 2 To .Slides.Count
-              .Slides(X).Shapes("PB_BG").Delete
-              .Slides(X).Shapes("PB_PB").Delete
               Set progressBackground = .Slides(X).Shapes.AddShape(msoShapeRectangle, _
               0, .PageSetup.SlideHeight - 12, .PageSetup.SlideWidth, 12)
               progressBackground.Fill.Solid.ForeColor.RGB = RGB(255, 255, 255)
